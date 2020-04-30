@@ -1,0 +1,43 @@
+@font-face{
+    font-family: 'font';
+    src: url('_sansserifbookflf-webfont.woff') format('woff');
+    src: url('_sansserifbookflf-webfont.woff2') format('woff2');
+}
+
+*{
+    margin: auto;
+    font-family: 'font';
+    font-size: 100%;
+    box-sizing: border-box;
+    max-width: 79%;
+
+}
+h1{
+    font-size: 2.9rem;
+    margin: 3rem 0 1rem;
+}
+h6{
+    font-size: 1.15rem;
+    margin: 0 .5rem 4rem;
+}
+h2, h3, h4, h5{
+    font-size: 1.5rem;
+    margin: 2.5rem 2rem 1rem;
+}
+img{
+    max-width: 150px;
+    margin: 1rem 2rem 1rem 2rem;
+}
+p{
+    margin: 1rem 2rem;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+}
+a{
+    margin: 2rem;
+    font-size: 1.3rem;
+    color: #FA9434;
+}
+p:last-child{
+    margin: 1rem 2rem 14rem;
+}
