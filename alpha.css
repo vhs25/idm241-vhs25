@@ -1,12 +1,12 @@
 @font-face{
-    font-family: 'font';
-    src: url('_sansserifbookflf-webfont.woff') format('woff');
-    src: url('_sansserifbookflf-webfont.woff2') format('woff2');
+    font-family: font;
+    src: url(_sansserifbookflf-webfont.woff) format('woff');
+    src: url(_sansserifbookflf-webfont.woff2) format('woff2');
 }
 
 *{
     margin: auto;
-    font-family: 'font';
+    font-family: font;
     font-size: 100%;
     box-sizing: border-box;
     max-width: 79%;
@@ -44,20 +44,42 @@ a{
 img:last-child{
     margin: 1rem 2rem 14rem;
 }
-#dot{
+.collapsed{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    cursor: pointer;
     width: 50px;
     height: 50px;
     border-radius: 100%;
     background-color: #cfdede;
-    margin: 3rem 2rem 5rem;
+    border: none;
+    padding: 0 auto 5px;
+    margin: 0 0 2rem;
 }
-#longdot{
+.active, .collapsed:hover {
+    background-color: #96b5b5;
+  }
+/*.content{
     width: 150px;
     height: 50px;
     border-radius: 50px;
     background-color: #cfdede;
-    margin: 3rem 2rem 5rem;
-}
+    left: 30px;
+    top: 30px;
+    transition: max-width 0.2s ease-out;
+    max-width: 0;
+    overflow: hidden;
+}**/
+
+.content {
+    padding: 0 18px;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+
 #dot, #longdot{
     text-align: center;
     font-size: 2rem;
@@ -73,6 +95,9 @@ img:last-child{
 #plus, #circle{
     color: #8fc1c1;
     font-size: 3rem;
+}
+#center{
+    align-self: 2rem auto;
 }
 
 /* ANIM:   **/
@@ -113,5 +138,40 @@ from {
 }
 to {
     transform:rotate(1260deg);
-}
+}}
 
+
+
+
+/* https://stackoverflow.com/questions/29344327/js-css-how-to-change-z-index-value-after-scrolling-down-past-1200-pixels-in-he **/
+.box{
+    background-color: #256d69;
+    color: rgb(247, 243, 230);
+    max-width: 375px;
+    line-height: 1.5;
+    font-size: 1.35rem;
+    padding: .5rem 0 .5rem;
+    z-index: 0;
+    /*display: inline;
+    z-index : 9999;
+    position: fixed; **/
+}
+#ing{
+    font-size: 2rem;
+    margin: .25rem .25rem .25rem 1rem;
+}
+#sticky{
+    background-color: #256d69;
+    color: rgb(247, 243, 230);
+    max-width: 375px;
+    max-width: 375px;
+    height: 2rem;
+    border: 1px solid #8fc1c1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+#ing_button{
+    height: 4px;
+}
