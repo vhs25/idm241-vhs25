@@ -1,0 +1,157 @@
+@font-face{
+    font-family: font;
+    src: url(_sansserifbookflf-webfont.woff) format('woff');
+    src: url(_sansserifbookflf-webfont.woff2) format('woff2');
+}
+
+*{
+    font-family: font;
+    font-size: 100%;
+    box-sizing: border-box;
+    margin: auto;
+}
+:root{
+    --teal: #256d69;
+    --tealgray: #96b5b5;
+    --lighttealgray: #cfdede;
+    --orange: #FA9434;
+    --creamcicle: rgb(244, 194, 147);
+}
+img{
+    display: block;
+    margin: center;
+}
+h1{
+    font-size: 2.9rem;
+    padding: 2rem 0;
+}
+.hero{
+    max-height: 250px;
+    text-align: center;
+    display: inline;
+}
+#hero{
+    display: block;
+    margin: center;
+    text-align: center;
+}
+p{
+    font-size: 1.3rem;
+    line-height: 150%;
+    padding: 0 0 1.5rem;
+}
+.h{
+    font-size: 1.5rem;
+    padding: 1.5rem 0 1.25rem;
+}
+div{
+    box-sizing: content-box;
+    max-width: 110%;
+    padding: 2rem 0;
+}
+a{
+    color: var(--orange);
+}
+#dark{
+    color: rgb(238, 115, 0);
+}
+main, #hero{
+    border-right: .25px solid var(--orange);
+    border-left: .25px solid var(--orange);
+}
+.orange{
+    background-color: var(--creamcicle);
+}
+#gif{
+    max-width: 100px;
+}
+#flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+#dropdown{
+    max-width: 200px;
+    margin: 1.5rem auto 2rem;
+}
+#ddlink{
+    color: var(--orange);
+    font-size: 1.35rem;
+}
+    
+    @media screen and (min-width: 1354px){
+        *{
+            max-width: 80%;
+        }
+    }
+    @media screen and (max-width: 1354px){
+        *{
+            max-width: 85%;
+        }
+    }
+    @media screen and (max-width: 1135px){
+        *{
+            max-width: 85%;
+        }
+    }
+    @media screen and (max-width: 1005px){
+        *{
+            max-width: 90%;
+        }
+    }
+    @media screen and (max-width: 617px){
+        main{
+            max-width: 90%;
+        }
+    }
+    @media screen and (max-width: 530px){
+        h1{
+            font-size: 2rem;
+        }
+        h2, .h{
+            font-size: 1.35rem;
+        }
+    }
+
+
+
+/* ANIM:   **/
+#spin:hover{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 3000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 3000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    @-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(1260deg); }
+    }
+    @-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(1260deg); }
+    }
+    @-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(1260deg); }
+    }
+    @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(1260deg);
+    }}

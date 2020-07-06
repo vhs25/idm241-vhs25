@@ -44,8 +44,7 @@ for (i = 0; i < content.width; i++) {
   }
   **/
 
-
-  
+   
 
 /*   collapsed.addEventListener('click', function() {
       content.hidden = false;
@@ -64,37 +63,61 @@ for (i = 0; i < content.width; i++) {
 
 
 
-
+/* https://stackoverflow.com/questions/29344327/js-css-how-to-change-z-index-value-after-scrolling-down-past-1200-pixels-in-he **/
 
 var z = document.getElementById('ingredients');
 var h = window.innerHeight;
 var z_height = z.offsetHeight;
 var ing_button = document.getElementById('ing_button');
 var expanded = false;
-console.log(h);
-console.log(z_height);
+var body = document.getElementById('scroll');
+
+var scrollval = body.offsetHeight;
+
+var totalheight = z_height + ing_button.offsetHeight;
+console.log(scrollval);
+console.log(totalheight);
 
 
 // Catch scroll event
 window.scroll(function() { 
   if (this.scrollTop()<h) { 
-      z.style.z-index == 0;
+      (z.style.zIndex) = 0;
+      
   } else {
-      z.style.z-index == 9999;
+      (z.style.zIndex) = 9999;
       console.log("floatin");
   }
 });
 
 // catch button click
 ing_button.onclick = function() {
-  console.log("click");
   if(!expanded){
-    //ing_button.animate({'down' : z_height}, {duration : 400});
-    z.style.marginTop = z_height;
+    console.log("move ingredients div below button");
+    z.animate([
+    { transform: 'translateY(-'+totalheight+'px)' }, 
+      { transform: 'translateY(0px)' }
+    ], {
+      duration: 450,
+      //fill: "forwards"
+    });
     expanded = true;
+    console.log("expanded");
+    //https://stackoverflow.com/questions/42231605/is-there-a-jquery-alternative-to-position-sticky
+    (z.style.position) = 'sticky';
+    (z.style.top) = '32px';
   }
   else{
-    ing_button.animate({'up' : z_height}, {duration : 400});
+    console.log("move ingredients div above button")
+    z.animate([
+      { transform: 'translateY('+totalheight+'px)' },
+      { transform: 'translateY(0px)' },
+    ], { 
+      duration: 450,
+    });
     expanded = false;
+    console.log("not expanded");
+    (z.style.position) = 'static';
+    (z.style.bottom) = '0px';
   }
 }
